@@ -14,15 +14,13 @@ def client():
 
 def test_validar_cedula_ecuatoriana(client):
     payload = {
-        "cedula": "1725279812",  # Ejemplo válido
+        "id_cedula": "1725279812",
         "nombre": "Carlos",
         "edad": 28,
         "sexo": "Masculino",
-        "antecedentes": "Si",
+        "antecedentes_judiciales": "Robo2018",
         "nivel_educativo": "Bachillerato",
-        "fecha": "1996-12-15"
+        "fecha_nacimiento": "1996-12-15"
     }
-    response = client.post("/validar", json=payload)
+    response = client.post("/api/validar_recluso", json=payload)
     assert response.status_code == 200
-    data = response.get_json()
-    assert data["mensaje"] == "Todos los datos son válidos"

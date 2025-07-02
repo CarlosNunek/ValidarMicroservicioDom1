@@ -55,7 +55,7 @@ def validar_datos(data):
             errores.append("La cédula o pasaporte ingresado no es válido.")
 
     # Validar el nombre (solo letras)
-    if 'nombre' in data and not re.match("^[a-zA-Z\s]+$", data['nombre']):
+    if 'nombre' in data and not re.match(r"^[a-zA-Z\s]+$", data['nombre']):
         errores.append("El nombre debe contener solo letras.")
 
     # Validar la edad (debe ser un número entero entre 0 y 100)
@@ -63,15 +63,15 @@ def validar_datos(data):
         errores.append("La edad debe ser un número entero entre 0 y 100.")
 
     # Validar antecedentes (alfanumérico, puede tener letras y números)
-    if 'antecedentes_judiciales' in data and not re.match("^[a-zA-Z0-9\s]+$", data['antecedentes_judiciales']):
+    if 'antecedentes_judiciales' in data and not re.match(r"^[a-zA-Z0-9\s]+$", data['antecedentes_judiciales']):
         errores.append("Los antecedentes deben ser alfanuméricos.")
 
     # Validar nivel educativo (combinación de letras y números, sin caracteres especiales)
-    if 'nivel_educativo' in data and not re.match("^[a-zA-Z0-9\s]+$", data['nivel_educativo']):
+    if 'nivel_educativo' in data and not re.match(r"^[a-zA-Z0-9\s]+$", data['nivel_educativo']):
         errores.append("El nivel educativo debe ser alfanumérico.")
 
     # Validar sexo (solo letras)
-    if 'sexo' in data and not re.match("^[a-zA-Z]+$", data['sexo']):
+    if 'sexo' in data and not re.match(r"^[a-zA-Z]+$", data['sexo']):
         errores.append("El sexo debe ser solo letras (masculino o femenino).")
 
     # Validar la fecha de nacimiento (debe ser una fecha en el pasado y coherente con la edad)
