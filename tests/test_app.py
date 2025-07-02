@@ -20,7 +20,8 @@ def test_validar_cedula_ecuatoriana(client):
         "sexo": "Masculino",
         "antecedentes_judiciales": "Robo2018",
         "nivel_educativo": "Bachillerato",
-        "fecha_nacimiento": "1996-12-15"
+        "fecha_nacimiento": "1996-12-15",
+        "familiares": []
     }
     response = client.post("/api/validar_recluso", json=payload)
     assert response.status_code == 200
