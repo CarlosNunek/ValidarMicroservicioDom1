@@ -12,13 +12,13 @@ def client():
 
 def test_validar_cedula_ecuatoriana(client):
     payload = {
-        "cedula": "1710034065",  # Ejemplo válido
+        "cedula": "1725279812",  # Ejemplo válido
         "nombre": "Carlos",
-        "edad": 30,
+        "edad": 28,
         "sexo": "Masculino",
-        "antecedentes": "Robo2018",
-        "nivel_educativo": "Primaria6",
-        "fecha": "1993-05-10"
+        "antecedentes": "Si",
+        "nivel_educativo": "Bachillerato",
+        "fecha": "1996-12-15"
     }
     response = client.post("/validar", json=payload)
     assert response.status_code == 200
